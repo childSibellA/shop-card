@@ -1,6 +1,4 @@
 
-import { Link } from 'react-router-dom';
-import './App.css';
 import Products from './components/Products/Products';
 import Choosen from './components/ChoosenProducts/Choosen';
 import { Routes, Route } from "react-router-dom";
@@ -12,8 +10,6 @@ function App() {
         <Route path="/" element={<Products />} />
         <Route path="/bucket" element={<Choosen />} />
       </Routes>
-      <Link to="/">Products</Link>
-      <Link to="/bucket">choosen</Link>
     </div>
   );
 }

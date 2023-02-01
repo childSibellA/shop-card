@@ -1,35 +1,32 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import Header from "../header/Header";
 import './Products.css';
-import PRODACTS_LIST from "./ProductList";
 
 const Products = () => {
-    const quantity = useSelector((state) => state.products.quantity);
-    // const dispatch = useDispatch();
-
-    console.log(quantity);
-
-    // dispatch({
-    //     type: "ADD_PRODUCT",
-    // });
-    
-    console.log(quantity);
+    const products = useSelector(state => state.products.productsList);
+    const dispatch = useDispatch();
 
     return (
         <div className="Products">
-            <div className="header">
-                <div className="icon">shop name</div>
-                <div className="serch">
-                    <input className="serchInput" type="text" placeholder="search products"></input>
-                </div>
-                <div className="productQuantity">0</div>
-            </div>
+            <Header />
             <div className="content">
-                {PRODACTS_LIST.map(product =>
-                    <div className="productBox">
+                {products.map(product =>
+                    <div className="productBox" key={product.id}>
                         <div className="productImg">img</div>
                         <p className="productName">{product.name}</p>
-                        <div className="productPrice">{product.price}$</div>
-                        <button>buy</button>
+                        <div className="priceAndBuy">
+                            <div className="productPrice">{product.price}$</div>
+                            <div onClick={() => {
+                                dispatch({
+                                    type: "ADD_PRODUCT",
+                                });
+                                dispatch({
+                                    type: "PRODUCT",
+                                    product
+                                });
+                            }
+                            } className="addBascetBtn">add in bascet</div>
+                        </div>
                     </div>
                 )}
             </div>
