@@ -4,7 +4,7 @@ const INIT_STATE = {
   
 const productsReducer = (state = INIT_STATE, action) => {
     if (action.type === "ADD_PRODUCT") {
-        return { quantity: state.quantity + 1 };
+        // return { quantity: state.quantity + 1 };
     }
 
     return state;
