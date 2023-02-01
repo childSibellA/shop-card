@@ -2,6 +2,7 @@ import "./Choosen.css";
 import Header from "../header/Header.js";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
+import ChoosenUnic from "./ChoosenUnic";
 
 const Choosen = () => {
   const choosen = useSelector(state => state.products.choosenProducts);
@@ -20,25 +21,10 @@ const Choosen = () => {
   return (
     <div className="chosenBackground">
       <Header />
-      {filtered.map((item, i) => {
-        return (
-          <div className="Choosen" key={item.id + item.name + i}>
-            <div className="listProperty">total price: 0</div>
-            <div className="choosenProducts">
-              <div className="choosenImg"></div>
-              <div className="nameAndPrice">
-                <p className="choosenName">{item.name}</p>
-                <div className="choosenPrice">{item.price}$</div>
-              </div>
-              <div className="btns">
-                <div>amount: 0</div>
-                <div className="addButton">Add</div>
-                <div className="removeButton">Remove</div>
-              </div>
-            </div>
-          </div>
-        )
-      })}
+      <div className="Choosen" >
+        <div className="listProperty">total price: 0</div>
+        <ChoosenUnic filtered={filtered} />
+      </div>
     </div>
   );
 };

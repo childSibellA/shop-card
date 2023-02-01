@@ -9,23 +9,23 @@ const Header = () => {
 
     return ( 
         <div className="header">
-                <div className="icon">
-                    <Link to="/">
-                    <img src={shopLogo} alt="basket" />
-                    </Link>
-                </div>
-                <div className="serch">
-                    <input className="serchInput" type="text" placeholder="search products"></input>
-                </div>
-                <div className="productQuantity">
-                    <Link to="/bucket">
-                        <div className="basketIconContainer">
-                            <img src={shoppingBasket} alt="basket" />
-                            <div style={{display: !quantity ? 'none' : 'flex'}} className="iconQuantity">{quantity}</div>
-                        </div>
-                    </Link>
-                </div>
+            <div className="icon">
+                <Link to="/">
+                <img src={shopLogo} alt="basket" />
+                </Link>
             </div>
+            <div className="serch">
+                <input className="serchInput" type="text" placeholder="search products"></input>
+            </div>
+            <div className="productQuantity">
+                <Link to="/bucket">
+                    <div className="basketIconContainer">
+                        <img src={shoppingBasket} alt="basket" />
+                        <div style={{display: !quantity ? 'none' : 'flex'}} className="iconQuantity">{quantity}</div>
+                    </div>
+                </Link>
+            </div>
+        </div>
      );
 }
  
