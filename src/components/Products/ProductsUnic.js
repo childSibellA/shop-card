@@ -1,5 +1,3 @@
-import { useDispatch, useSelector } from "react-redux";
-
 import { useState } from "react";
 
 const ProductsUnic = (props) => {
@@ -14,11 +12,11 @@ const ProductsUnic = (props) => {
                     <div className="productPrice">{props.product.price}$</div>
                     {!active && <div onClick={() => {
                         setActive(true);
-                        props.removeHandler(props.product)
+                        props.removeHandler(props.product);
                     }} className={"removeBascetBtn"}>remove from bascet</div>} 
                     {active && <div onClick={() => {
                         setActive(false);
-                        props.addDispachHandler(props.product)
+                        props.addDispachHandler(props.product);
                     }} className={"addBascetBtn"}>add in bascet</div>}
                 </div>
             </div>

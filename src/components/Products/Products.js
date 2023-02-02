@@ -5,19 +5,24 @@ import './Products.css';
 
 const Products = () => {
     const products = useSelector(state => state.products.productsList);
+    const unicChoosen = useSelector(state => state.products.unicChoosenPeoduct);
+    const choosen = useSelector(state => state.products.choosenProducts);
+
 
     const dispatch = useDispatch();
 
     const addDispachHandler = (product) => {
-
         dispatch({ type: "ADD_PRODUCT_QUANTITY", });
         dispatch({ type: "ADD_COOSEN_PRODUCT", product });
-        // dispatch({ type: "FILTER_COOSEN", choosen});
+        dispatch({ type: "ADD_COOSEN_UNIC_PRODUCT", product });
     };
 
-    const removeHandler = () => {
-        dispatch({ type: "REMOVE_COOSEN_PRODUCTS"});
-        console.log("remove")
+    const removeHandler = (product) => {
+        let unicRemoved = unicChoosen.filter(item => item !== product);
+        let removed = choosen.filter(item => item !== product);
+
+        dispatch({ type: "REMOVE_COOSEN_PRODUCT", removed});
+        dispatch({ type: "REMOVE_COOSEN_UNIC_PRODUCT", unicRemoved});
     };
 
     return (

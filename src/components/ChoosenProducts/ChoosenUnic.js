@@ -1,22 +1,18 @@
 const ChoosenUnic = (props) => {
     return ( 
         <>
-        {props.unicChoosen.map((item, id) => {
-            return (
-              <div className="choosenProducts"key={id}>
-                <div className="choosenImg"></div>
-                <div className="nameAndPrice">
-                  <p className="choosenName">{item.name}</p>
-                  <div className="choosenPrice">{item.price}$</div>
-                </div>
-                <div className="btns">
-                  <div>amount: 0</div>
-                  <div className="addButton">Add</div>
-                  <div className="removeButton">Remove</div>
-                </div>
-              </div>
-            )
-          })}
+          <div className="choosenProducts"key={props.index}>
+            <div className="choosenImg"></div>
+            <div className="nameAndPrice">
+              <p className="choosenName">{props.product.name}</p>
+              <div className="choosenPrice">{props.product.price}$</div>
+            </div>
+            <div className="btns">
+              <div>quantity: 0</div>
+              <div className="addButton" onClick={props.addUnicProduct(props.product)}>Add</div>
+              <div className="removeButton">Remove</div>
+            </div>
+          </div>
         </>
      );
 }

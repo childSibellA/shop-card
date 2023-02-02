@@ -1,11 +1,13 @@
-import { Link } from "react-router-dom";
 import shoppingBasket from '../imgs/shopping-cart.png';
 import shopLogo from '../imgs/icons-shop.png';
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import "./Header.css"
 
 const Header = () => {
-    const quantity = useSelector((state) => state.products.quantity);
+    const allChoosen = useSelector(state => state.products.choosenProducts);
+
+    
 
     return ( 
         <div className="header">
@@ -21,7 +23,7 @@ const Header = () => {
                 <Link to="/bucket">
                     <div className="basketIconContainer">
                         <img src={shoppingBasket} alt="basket" />
-                        <div style={{display: !quantity ? 'none' : 'flex'}} className="iconQuantity">{quantity}</div>
+                        <div style={{display: !allChoosen.length ? 'none' : 'flex'}} className="iconQuantity">{allChoosen.length}</div>
                     </div>
                 </Link>
             </div>
