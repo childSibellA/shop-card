@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.Products {
+    width: 100%;
+    height: min-content;
+    background-color: rgb(218, 184, 141);
+}
+.content {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    padding: 30px;
+    gap: 30px;
+}
+.productBox {
+    height: 300px;
+    background-color: rgb(206, 244, 231);
+    border: 1px solid black;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 4px;
+}
+.productImg {
+    background-color: rgb(241, 201, 107);
+    width: 100%;
+    height: 160px;
+}
+.productPrice {
+    height: 40px;
+    color: red;
+    padding: 2px;
+}
+.addBascetBtn {
+    background-color: green;
+    color: aliceblue;
+    border-radius: 4px;
+    padding: 7px;
+    cursor: pointer;
+}
+.removeBascetBtn {
+    background-color: red;
+    color: aliceblue;
+    border-radius: 4px;
+    padding: 7px;
+    cursor: pointer;
+}
+.priceAndBuy {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
