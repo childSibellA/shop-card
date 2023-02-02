@@ -2,7 +2,6 @@ const INIT_STATE = {
   diferentProductAmount: 0,
   quantity: 0,
   totalPrice: 0,
-  severalProdactId: [],
   choosenProducts: [],
   productsList: [
       {
@@ -44,12 +43,17 @@ const INIT_STATE = {
 };
 
 const productsReducer = (state = INIT_STATE, action) => {
-  if (action.type === "ADD_PRODUCT") {
-      return { ...state, quantity: state.quantity + 1 };
+
+  if (action.type === "ADD_PRODUCT_QUANTITY") {
+    return { ...state, quantity: state.quantity + 1 };
   }
   
-  if (action.type === "PRODUCT") {
-      return { ...state, choosenProducts: [...state.choosenProducts, action.product] };
+  if (action.type === "ADD_COOSEN_PRODUCT") {
+    return { ...state, choosenProducts: [...state.choosenProducts, action.product] };
+  }
+
+  if (action.type === "REMOVE_COOSEN_PRODUCTS") {
+    return { ...state, choosenProducts: [...state.choosenProducts, action.product] };
   }
 
   return state;

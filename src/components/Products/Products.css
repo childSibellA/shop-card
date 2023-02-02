@@ -43,6 +43,13 @@
     padding: 7px;
     cursor: pointer;
 }
+.removeBascetBtn {
+    background-color: red;
+    color: aliceblue;
+    border-radius: 4px;
+    padding: 7px;
+    cursor: pointer;
+}
 .priceAndBuy {
     width: 100%;
     display: flex;
